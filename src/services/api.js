@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:5001';
+const API_BASE_URL = 'https://stylehub-backend-6968.onrender.com';
 
 import axios from 'axios';
 
