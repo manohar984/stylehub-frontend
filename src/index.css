@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Dynamic custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-100 dark:bg-darkbg-100;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 hover:bg-slate-400 dark:bg-slate-700 dark:hover:bg-slate-600 rounded;
+  }
+}
+
+@layer components {
+  /* Frosted Glassmorphism Card style */
+  .glass-card {
+    @apply bg-white/70 dark:bg-slate-900/60 backdrop-blur-md border border-white/20 dark:border-slate-800/40 shadow-xl shadow-slate-100/50 dark:shadow-none;
+  }
+  
+  .glass-card-hover {
+    @apply transition-all duration-300 hover:shadow-2xl hover:shadow-primary-500/10 hover:-translate-y-1 hover:border-primary-400/30;
+  }
+
+  /* Animated background gradients */
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradientShift 6s ease infinite;
+  }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Toastify custom overrides to match theme */
+.Toastify__toast-theme--colored.Toastify__toast--success {
+  background-color: #4f46e5 !important;
+}
+.Toastify__toast-theme--colored.Toastify__toast--error {
+  background-color: #ef4444 !important;
+}
+.Toastify__toast-theme--colored.Toastify__toast--info {
+  background-color: #3b82f6 !important;
+}
+.Toastify__toast-theme--colored.Toastify__toast--warning {
+  background-color: #f59e0b !important;
+}
